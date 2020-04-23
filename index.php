@@ -1,3 +1,25 @@
+<?php
+
+include 'connect.php';
+if(isset($_POST['submit']))
+{
+    $error = 0;
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $sql = "INSERT INTO contactform(name,email,subject,message) VALUES('$name','$email','$subject','$message')";
+		if($conn->query($sql)===TRUE)
+		{
+			echo "";
+        }
+        else
+        {
+            echo "";
+        }
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +29,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>Portfolio</title>
   </head>
@@ -63,7 +85,7 @@
             <div class="row">
                 <div class="col-xs-3">
                     <div class="card" style="width: 18rem;">
-                        <img src="images/geet.jpg" class="card-img-top" alt="imageofme">
+                        <img src="geet.jpg" class="card-img-top" alt="imageofme">
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -71,7 +93,7 @@
                         <div class="col-md-6">
                             <ul>
                                 <li><h5>Name: Geetanjali Korde</h5></li>
-                                <li><h5>Website:Coming Soon</h5></li>
+                                <li><h5>Website: www.hermione.com</h5></li>
                                 <li><h5>Phone: +91 9131694568</h5></li>
                                 <li><h5>City: Indore</h5></li>
                             </ul>
@@ -110,46 +132,37 @@
             <div class="row">
                 <div class="col-md">
                     <div class="card mt-4" style="width: 12rem;">
-                        <img src="images/happy.png" class="card-img-top" alt="happy">
+                        <img src="happy.png" class="card-img-top" alt="happy">
                         <div class="card-body card1-body rounded-circle">
-                          <p class="card-text card1-text">My Clients: 2</p>
+                          <p class="card-text card1-text">My Clients: 4</p>
                         </div>
                       </div>
                 </div>
                 <div class="col-md">
                     <div class="card mt-4" style="width: 12rem;">
-                        <img src="images/website.png" class="card-img-top" alt="projects">
+                        <img src="website.png" class="card-img-top" alt="projects">
                         <div class="card-body card1-body rounded-circle">
-                          <p class="card-text card1-text">My Projects: 2</p>
+                          <p class="card-text card1-text">My Projects: 4</p>
                         </div>
                       </div>
                 </div>
                 <div class="col-md">
                     <div class="card mt-4" style="width: 12rem;">
-                        <img src="images/years.png" class="card-img-top" alt="years">
+                        <img src="years.png" class="card-img-top" alt="years">
                         <div class="card-body card1-body rounded-circle">
-                          <p class="card-text card1-text">My Experience: 1yr</p>
+                          <p class="card-text card1-text">My Experience: 3yr</p>
                         </div>
                       </div>
                 </div>
                 <div class="col-md">
                     <div class="card mt-4" style="width: 12rem;">
-                        <img src="images/award.png" class="card-img-top" alt="awards">
+                        <img src="award.png" class="card-img-top" alt="awards">
                         <div class="card-body card1-body rounded-circle">
                           <p class="card-text card1-text">My Awards: 5</p>
                         </div>
                       </div>
-                </div>
-            </div>
-                <div class="row">
-                    <div class="col"></div>
-                    <div class="col-md-auto"></div>
-                    <div class="col col-lg-1">
-                        <div class="btn-group" role="group" aria-label="Third group">
-                            <button type="button" class="btn btn-secondary sticky-btn"><strong>^</strong></button>
-                          </div>
                     </div>
-                  </div>
+                </div>
             </div>   
             <div class="container-fluid" id="about-div">
                 <div class="row col-lg-12" id="space-div3"></div>
@@ -306,26 +319,28 @@
                             </div>
                         </div>
                         <div class="container">
-                            <form>
+                            <form class = "contact-form"  method="post">
                                 <div class="row">
                                     <div class="col mt-4">
-                                        <input type="text" class="form-control" placeholder="Your Name">
+                                        <input type="text" class="form-control" placeholder="Your Name" name="name">
                                     </div>
                                     <div class="col mt-4">
-                                        <input type="text" class="form-control" placeholder="Your Email">
+                                        <input type="text" class="form-control" placeholder="Your Email" name="email">
                                     </div>
                                </div>
                                 <div class="form-group mt-4">
-                                    <input type="text" class="form-control" id="inputAddress" placeholder="Subject">
+                                    <input type="text" class="form-control" id="inputSubject" placeholder="Subject" name="subject">
                                 </div>
                                 <div class="form-group my-4">
-                                    <input type="text" row="3" class="form-control" id="inputAddress" placeholder="Message">
+                                    <input type="text" row="3" class="form-control" id="inputAddress" placeholder="Message" name="message">
                                 </div>
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-sm"></div>
                                         <div class="col-sm">
-                                            <button type="button" class="btn btn-warning btn-lg btn-block mb-5" style="align-self: center;">Send Message</button>
+                                            <div class="container">
+                                            <input value="Send Message" type="submit" name="submit" class="btn">
+                                        </div>
                                         </div>
                                         <div class="col-sm"></div>
                                     </div>
@@ -339,8 +354,7 @@
                 <div class="row">
                     <div class="col-md"></div>
                     <div class="col-md">
-                        &copy;Copyright. All Rights Reserved
-                        <h6 class="footer-right ml-5">Designed By Geetanjali Korde</h6>
+                        &copy;Copyright <strong>Geetanjali.</strong>All Rights Reserved.Designed By Geetanjali
                     </div>
                     <div class="col-md"></div>
                 </div>
