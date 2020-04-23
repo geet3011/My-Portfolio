@@ -1,0 +1,149 @@
+*
+{
+    margin: 0px;
+}
+#main-div
+{
+    background-color: rgba(10, 10, 10, 0.609);
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    /*color: rgba(10, 10, 10, 0.609);*/
+}
+#nav-id
+{
+    font-weight: 500;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+}
+.color-dec
+{
+    color: rgb(248, 247, 244);
+}
+#opaque-div
+{
+    background-image: url(../images/hero-bg.jpg);
+    
+}
+#space-div
+{
+    height: 150px;
+}
+#space-div1
+{
+    height: 220px;
+}
+#space-div2
+{
+    height: 350px;
+}
+#name-id
+{
+    font-size: 40px;
+    font-family: Verdana,serif;
+    font-weight: normal;
+    color: whitesmoke;
+}
+#para-id
+{
+    font-size: 25px;
+    color: whitesmoke;
+}
+#about-div
+{
+    background-color: white;
+}
+
+#space-div3
+{
+    height: 100px;
+}
+#aboutme-id
+{
+    text-align: center;
+    font-weight: bold;
+    color: rgb(228, 120, 93);
+    font-size: 50px;
+   
+}
+#onelineintro
+{
+    text-align: center;
+    color: #3b434a;
+    font-family: Cambria;
+    font-size: 17px;
+}
+.card
+{
+    border: none;
+    align-items: center;
+}
+.card1-body
+{
+    background-color: rgb(228, 120, 93);
+}
+.card1-text
+{
+    font-weight: bold;
+    font-size: 15px;
+    font-family: cursive;
+}
+.summary-title
+{
+    font-size: 26px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #3b434a;
+}
+.summ-name
+{
+    color: darkorange;
+    font-size: 18px;
+}
+.summary
+{
+    color: #3b434a;
+    font-size: 18px;
+    font-style: italic;
+}
+.list-cont
+{
+    color: #3b434a;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.card2-body
+{
+    shape-outside: linear-gradient(grey);
+}
+.yeartill
+{
+    background-color: #eef0f2;
+    text-align: center;
+}
+.from
+{
+    font-style: italic;
+}
+.footer-class
+{
+    background-image: url(../images/footer-bg.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    /*color: rgba(10, 10, 10, 0.609);*/
+
+}
+.opaque-footer
+{
+    color: rgba(10, 10, 10, 0.609);
+}
+.footer-space1
+{
+    height: 100px;
+}
+.sticky-btn
+{
+    position: sticky;
+
+}
