@@ -1,5 +1,5 @@
 <?php
-
+/*
 include 'connect.php';
 if(isset($_POST['submit']))
 {
@@ -18,7 +18,7 @@ if(isset($_POST['submit']))
         {
             echo "";
         }
-}
+}*/
 ?>
 <!doctype html>
 <html lang="en">
@@ -29,43 +29,60 @@ if(isset($_POST['submit']))
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" type="text/css">
+    
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <title>Portfolio</title>
-  </head>
-  <body>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  
+    <script src="js/animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css" type="text/css">
+<script>
+$(function() {
+    $('a[href*=\\#]:not([href=\\#])').on('click', function() {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+        if (target.length) {
+            $('html,body').animate({
+                scrollTop: target.offset().top
+            }, 500);
+            return false;
+        }
+    });
+});
+</script>
+  </head>
+  <body>
+
 
     <div class="container-fluid" id="main-div">
         <div class="container-fluid" id="opaque-div">
+        <div class="fixed">
             <ul class="nav justify-content-center" id="nav-id home-sec">
-                <li class="nav-item mt-4">
-                    <a class="nav-link active color-dec" href="#home-sec" id="home-id">Home</a>
+                <li class="nav-item mt-2">
+                    <a class="nav-link active color-dec" href="#opaque-div" id="home-id">Home</a>
                 </li>
-                <li class="nav-item mt-4">
-                    <a class="nav-link color-dec" href="#about-sec">About Me</a>
+                <li class="nav-item mt-2">
+                    <a class="nav-link color-dec" href="#about-div">About Me</a>
                 </li>
-                <li class="nav-item mt-4">
-                    <a class="nav-link color-dec" href="#resume-sec">Resume</a>
+                <li class="nav-item mt-2">
+                    <a class="nav-link color-dec" href="#my-resume">Resume</a>
                 </li>
-                <li class="nav-item mt-4">
+                <li class="nav-item mt-2">
                     <a class="nav-link color-dec" href="#contact-sec">Contact Me</a>
                 </li>
             </ul>
+           </div> 
             <div class="row col-lg-12" id="space-div1"></div>
             <div class="container">
-                <div class="row">
-                    <div class="col-sm"></div>
-                    <div class="col-sm">
+                <div class="row pt-5">
+                
+                    <div class="col-md-12 m-auto text-center mt-5">
                         <h1 id="name-id">Geetanjali Korde</h1>
                         <p id="para-id">I am a Software Developer</p>
                     </div>
-                    <div class="col-sm"></div>
+       
                 </div>
             </div>
             <div class="row col-lg-12" id="space-div2"></div>    
@@ -85,7 +102,7 @@ if(isset($_POST['submit']))
             <div class="row">
                 <div class="col-xs-3">
                     <div class="card" style="width: 18rem;">
-                        <img src="geet.jpg" class="card-img-top" alt="imageofme">
+                        <img src="images/geet.jpg" class="card-img-top" alt="imageofme">
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -93,8 +110,8 @@ if(isset($_POST['submit']))
                         <div class="col-md-6">
                             <ul>
                                 <li><h5>Name: Geetanjali Korde</h5></li>
-                                <li><h5>Website: www.hermione.com</h5></li>
-                                <li><h5>Phone: +91 9131694568</h5></li>
+                                <li><h5>Website: Coming Soon </h5></li>
+                                
                                 <li><h5>City: Indore</h5></li>
                             </ul>
                         </div>
@@ -132,7 +149,7 @@ if(isset($_POST['submit']))
             <div class="row">
                 <div class="col-md">
                     <div class="card mt-4" style="width: 12rem;">
-                        <img src="happy.png" class="card-img-top" alt="happy">
+                        <img src="images/happy.png" class="card-img-top" alt="happy">
                         <div class="card-body card1-body rounded-circle">
                           <p class="card-text card1-text">My Clients: 4</p>
                         </div>
@@ -140,7 +157,7 @@ if(isset($_POST['submit']))
                 </div>
                 <div class="col-md">
                     <div class="card mt-4" style="width: 12rem;">
-                        <img src="website.png" class="card-img-top" alt="projects">
+                        <img src="images/website.png" class="card-img-top" alt="projects">
                         <div class="card-body card1-body rounded-circle">
                           <p class="card-text card1-text">My Projects: 4</p>
                         </div>
@@ -148,7 +165,7 @@ if(isset($_POST['submit']))
                 </div>
                 <div class="col-md">
                     <div class="card mt-4" style="width: 12rem;">
-                        <img src="years.png" class="card-img-top" alt="years">
+                        <img src="images/years.png" class="card-img-top" alt="years">
                         <div class="card-body card1-body rounded-circle">
                           <p class="card-text card1-text">My Experience: 3yr</p>
                         </div>
@@ -156,7 +173,7 @@ if(isset($_POST['submit']))
                 </div>
                 <div class="col-md">
                     <div class="card mt-4" style="width: 12rem;">
-                        <img src="award.png" class="card-img-top" alt="awards">
+                        <img src="images/award.png" class="card-img-top" alt="awards">
                         <div class="card-body card1-body rounded-circle">
                           <p class="card-text card1-text">My Awards: 5</p>
                         </div>
@@ -164,7 +181,7 @@ if(isset($_POST['submit']))
                     </div>
                 </div>
             </div>   
-            <div class="container-fluid" id="about-div">
+            <div class="container-fluid" id="my-resume">
                 <div class="row col-lg-12" id="space-div3"></div>
                 <div class="container" id="resume-sec">
                     <div class="row">
@@ -194,7 +211,7 @@ if(isset($_POST['submit']))
                                       <p class="card-text summary">Creative and innovtive full stack developer.Recently working on Django prject.</p>
                                       <ul class="list-cont">
                                           <li class="list mt-2">geetkorde@gmail.com</li>
-                                          <li class="list mt-2">+91 9131694568</li>
+                                         
                                       </ul>  
                                     </div>
                                 </div>
@@ -339,7 +356,10 @@ if(isset($_POST['submit']))
                                         <div class="col-sm"></div>
                                         <div class="col-sm">
                                             <div class="container">
-                                            <input value="Send Message" type="submit" name="submit" class="btn">
+                                                    <div class="col-md-5 m-auto pt-3 pb-3">
+                                            <input value="Send Message" type="submit" name="submit" class="btn btn-primary">
+
+                                                </div>
                                         </div>
                                         </div>
                                         <div class="col-sm"></div>
@@ -350,13 +370,13 @@ if(isset($_POST['submit']))
                     </div>
                 </div>
             </div>
-            <div class="container">
+            <div class="container mt-3 mb-1">
                 <div class="row">
-                    <div class="col-md"></div>
-                    <div class="col-md">
-                        &copy;Copyright <strong>Geetanjali.</strong>All Rights Reserved.Designed By Geetanjali
+                    
+                    <div class="col-md-12 text-center">
+                        &copy;Copyright <strong>Geetanjali.</strong> All Rights Reserved.Designed By Geetanjali
                     </div>
-                    <div class="col-md"></div>
+                   
                 </div>
             </div>
         </div>

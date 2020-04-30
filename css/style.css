@@ -147,3 +147,19 @@
     position: sticky;
 
 }
+
+.fixed{
+    position: fixed;
+    width:100%;
+    z-index: 1;
+    -webkit-transition: all ease-out .5s;
+    -moz-transition: all ease-out .5s;
+    -o-transition: all ease-out .5s;
+    transition: all ease-out .5s;
+}
+.active-scroll{
+    background-color: rgba(0,0,0,0.8);
+    color: black;
+    padding-bottom:.5rem!important;
+    margin-left:-30px;
+}
